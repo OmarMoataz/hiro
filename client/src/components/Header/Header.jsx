@@ -75,7 +75,7 @@ export function Header() {
       <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
         <span> Izam </span>
       </Link>
-      <SearchBox className="hidden lg:block" />
+      <SearchBox className="!w-72 hidden lg:block" />
       <div className="ml-auto flex gap-2 !bg-black">
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>

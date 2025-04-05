@@ -3,7 +3,7 @@ export function SearchBox(props) {
 
   return (
     <input
-      className={`rounded-full px-3 py-2 w-full ${className}`}
+      className={`bg-white text-black rounded-full px-3 py-2 w-full ${className}`}
       placeholder="Search by name, job, or title..."
     />
   );
