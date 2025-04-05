@@ -12,7 +12,14 @@ import {
 } from "@/components/Header/ui/navigation-menu";
 import { SearchBox } from "@/components/SearchBox/SearchBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBell,
+  faBusinessTime,
+  faCircleUser,
+  faHouse,
+  faMessage,
+  faPeopleGroup,
+} from "@fortawesome/free-solid-svg-icons";
 
 export function Header() {
   return (
@@ -33,22 +40,34 @@ export function Header() {
               <SearchBox />
             </div>
             <Link href="#" prefetch={false}>
-              Home
+              <span className="flex gap-2 items-center">
+                <FontAwesomeIcon icon={faHouse} />
+                Home
+              </span>
             </Link>
             <Link href="#" prefetch={false}>
-              Jobs
+              <span className="flex gap-2 items-center">
+                <FontAwesomeIcon icon={faBusinessTime} />
+                Jobs
+              </span>
             </Link>
             <Link href="#" prefetch={false}>
-              Employers
+              <span className=" flex gap-2 items-center">
+                <FontAwesomeIcon icon={faPeopleGroup} />
+                Employers
+              </span>
             </Link>
             <Link href="#" prefetch={false}>
-              Notifications
+              <span className="flex gap-2 items-center">
+                <FontAwesomeIcon icon={faBell} />
+                Notifications
+              </span>
             </Link>
             <Link href="#" prefetch={false}>
-              Messaging
-            </Link>
-            <Link href="#" prefetch={false}>
-              Profile
+              <span className="flex gap-2 items-center">
+                <FontAwesomeIcon icon={faMessage} />
+                Messaging
+              </span>
             </Link>
           </div>
         </SheetContent>
@@ -56,6 +75,7 @@ export function Header() {
       <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
         <span> Izam </span>
       </Link>
+      <SearchBox className="hidden lg:block" />
       <div className="ml-auto flex gap-2 !bg-black">
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
@@ -70,7 +90,7 @@ export function Header() {
             <NavigationMenuLink asChild>
               <Link className="me-3" href="#" prefetch={false}>
                 <span className="flex flex-col">
-                  <FontAwesomeIcon icon={faHouse} />
+                  <FontAwesomeIcon icon={faBusinessTime} />
                   Jobs
                 </span>
               </Link>
@@ -81,8 +101,8 @@ export function Header() {
                 href="#"
                 prefetch={false}
               >
-                <span className="flex flex-col">
-                  <FontAwesomeIcon icon={faHouse} />
+                <span className=" flex flex-col border-r pe-4 border-white">
+                  <FontAwesomeIcon icon={faPeopleGroup} />
                   Employers
                 </span>
               </Link>
@@ -90,7 +110,7 @@ export function Header() {
             <NavigationMenuLink asChild>
               <Link className="me-3" href="#" prefetch={false}>
                 <span className="flex flex-col">
-                  <FontAwesomeIcon icon={faHouse} />
+                  <FontAwesomeIcon icon={faBell} />
                   Notifications
                 </span>
               </Link>
@@ -98,7 +118,7 @@ export function Header() {
             <NavigationMenuLink asChild>
               <Link className="me-3" href="#" prefetch={false}>
                 <span className="flex flex-col">
-                  <FontAwesomeIcon icon={faHouse} />
+                  <FontAwesomeIcon icon={faMessage} />
                   Messaging
                 </span>
               </Link>
@@ -106,7 +126,7 @@ export function Header() {
             <NavigationMenuLink asChild>
               <Link className="me-3" href="#" prefetch={false}>
                 <span className="flex flex-col">
-                  <FontAwesomeIcon icon={faHouse} />
+                  <FontAwesomeIcon icon={faCircleUser} />
                   Profile
                 </span>
               </Link>
