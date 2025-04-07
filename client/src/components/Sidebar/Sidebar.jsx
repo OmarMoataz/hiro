@@ -24,10 +24,12 @@ export function Sidebar(props) {
   }, []);
 
   return (
-    <div className="w-80">
+    <aside className="w-80">
       <div className="p-4 w-full flex justify-between border-b">
         <h1> Menu </h1>
-        <FontAwesomeIcon icon={faGear} className="text-black" />
+        <Button onClick={() => {
+          
+        }}> <FontAwesomeIcon icon={faGear} className="text-black" /> </Button>
       </div>
       <ul className="px-2 py-4">
         {data.map((item) => (
@@ -63,6 +65,6 @@ export function Sidebar(props) {
           </li>
         ))}
       </ul>
-    </div>
+    </aside>
   );
 }
