@@ -7,7 +7,7 @@ import {
   faGear,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import { Button } from "../Header/ui/button";
+import { Button } from "../Button/Button";
 
 export function Sidebar(props) {
   const { data } = props;
@@ -27,9 +27,10 @@ export function Sidebar(props) {
     <aside className="w-80">
       <div className="p-4 w-full flex justify-between border-b">
         <h1> Menu </h1>
-        <Button onClick={() => {
-          
-        }}> <FontAwesomeIcon icon={faGear} className="text-black" /> </Button>
+        <Button variant="ghost" onClick={() => {}}>
+          {" "}
+          <FontAwesomeIcon icon={faGear} className="text-black" />{" "}
+        </Button>
       </div>
       <ul className="px-2 py-4">
         {data.map((item) => (

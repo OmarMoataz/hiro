@@ -3,7 +3,7 @@ import {
   SheetTrigger,
   SheetContent,
 } from "@/components/Header/ui/sheet";
-import { Button } from "@/components/Header/ui/button";
+import { Button } from "@/components/Button/Button";
 import Link from "next/link";
 import {
   NavigationMenu,
