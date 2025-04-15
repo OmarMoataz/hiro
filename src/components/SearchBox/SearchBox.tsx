@@ -1,4 +1,9 @@
-export function SearchBox(props) {
+
+interface ISearchBox {
+  className?: string;
+}
+
+export function SearchBox(props: ISearchBox) {
   const { className } = props;
 
   return (

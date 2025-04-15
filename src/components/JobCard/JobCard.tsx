@@ -9,7 +9,16 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 
-export function JobCard(props) {
+interface IJobCard {
+  companyLogo: string;
+  jobTitle: string;
+  companyName: string;
+  location: string,
+  timeSincePosted: string,
+  styles: string,
+}
+
+export function JobCard(props: IJobCard) {
   const {
     companyLogo,
     jobTitle,
