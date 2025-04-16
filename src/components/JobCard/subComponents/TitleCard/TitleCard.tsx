@@ -1,4 +1,10 @@
-export function TitleCard(props) {
+interface ITitleCard {
+  src: string;
+  title: string;
+  shortDesc: string;
+}
+
+export function TitleCard(props: ITitleCard) {
   const { src, title, shortDesc } = props;
   return (
     <div className="flex gap-2">
