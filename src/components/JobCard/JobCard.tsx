@@ -15,7 +15,7 @@ interface IJobCard {
   companyName: string;
   location: string,
   timeSincePosted: string,
-  styles: string,
+  styles?: string,
 }
 
 export function JobCard(props: IJobCard) {

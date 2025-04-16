@@ -9,19 +9,37 @@ import {
 import { useEffect, useState } from "react";
 import { Button } from "../Button/Button";
 
-export function Sidebar(props) {
+interface ISidebarItem {
+  id: string;
+  title: string;
+  target: string;
+  children?: Array<ISidebarItem>;
+}
+
+interface ISidebarProps {
+  data: Array<ISidebarItem>
+}
+
+export function Sidebar(props: ISidebarProps) {
   const { data } = props;
 
-  const [visibleMatrix, setVisibleMatrix] = useState({});
+  const [visibleMatrix, setVisibleMatrix] = useState(new Map());
 
   useEffect(() => {
-    const visibilityHash = {};
     data.forEach((item) => {
-      visibilityHash[item] = false;
+      setVisibleMatrix(visibleMatrix.set(item.title, false));
     });
 
-    setVisibleMatrix(visibilityHash);
+    
+    
+
   }, []);
+
+  console.log(visibleMatrix);
+
+  visibleMatrix.forEach((item) => {
+    console.log(visibleMatrix.get(item));
+  })
 
   return (
     <aside className="w-80">
@@ -39,23 +57,26 @@ export function Sidebar(props) {
               variant="ghost"
               className="w-full"
               onClick={() => {
-                if (visibleMatrix[item.title])
-                  setVisibleMatrix({ ...visibleMatrix, [item.title]: false });
-                else setVisibleMatrix({ ...visibleMatrix, [item.title]: true });
+                if (visibleMatrix.get(item.title)) {
+                  setVisibleMatrix(new Map(visibleMatrix.set(item.title, false)));
+                }
+                else {
+                  setVisibleMatrix(new Map(visibleMatrix.set(item.title, true)));
+                }
               }}
             >
               <span className="flex justify-between w-full p-2 bg-gray-100">
                 {item.title}{" "}
-                {item.children && !visibleMatrix[item.title] && (
+                {item.children && !visibleMatrix.get(item.title) && (
                   <FontAwesomeIcon icon={faAngleDown} />
                 )}
-                {item.children && visibleMatrix[item.title] && (
+                {item.children && visibleMatrix.get(item.title) && (
                   <FontAwesomeIcon icon={faAngleUp} />
                 )}
               </span>
             </Button>
             <ul className="ms-3">
-              {visibleMatrix[item.title] &&
+              {visibleMatrix.get(item.title) &&
                 item?.children?.map((child) => (
                   <li className="p-2" key={child.title}>
                     {" "}

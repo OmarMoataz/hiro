@@ -138,7 +138,7 @@ export function Header() {
   );
 }
 
-function MenuIcon(props) {
+function MenuIcon(props: { className?: string }) {
   return (
     <svg
       {...props}
