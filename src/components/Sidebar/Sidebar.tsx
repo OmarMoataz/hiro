@@ -29,20 +29,10 @@ export function Sidebar(props: ISidebarProps) {
     data.forEach((item) => {
       setVisibleMatrix(visibleMatrix.set(item.title, false));
     });
-
-    
-    
-
   }, []);
 
-  console.log(visibleMatrix);
-
-  visibleMatrix.forEach((item) => {
-    console.log(visibleMatrix.get(item));
-  })
-
   return (
-    <aside className="w-80">
+    <aside className="md:w-80 hidden md:block">
       <div className="p-4 w-full flex justify-between border-b">
         <h1> Menu </h1>
         <Button variant="ghost" onClick={() => {}}>
