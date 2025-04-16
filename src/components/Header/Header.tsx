@@ -33,7 +33,7 @@ export function Header() {
         </SheetTrigger>
         <SheetContent side="left">
           <Link href="#" prefetch={false}>
-            <span> Izam </span>
+            <span className="font-bold"> Hiro </span>
           </Link>
           <div className="grid gap-2 py-6">
             <div className="w-full">
@@ -73,7 +73,7 @@ export function Header() {
         </SheetContent>
       </Sheet>
       <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-        <span> Izam </span>
+        <span className="font-bold"> Hiro </span>
       </Link>
       <SearchBox className="!w-72 hidden lg:block" />
       <div className="ml-auto flex gap-2 !bg-black">
